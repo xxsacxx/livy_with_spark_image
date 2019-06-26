@@ -16,3 +16,16 @@ bin/spark-submit  \
     --name spark-pi  \
     local:///usr/local/spark/examples/jars/spark-examples_2.11-2.4.0.jar 
 
+
+
+
+
+bin/spark-submit \
+--master k8s://https://localhost:6443 \
+--deploy-mode cluster \
+--class org.apache.spark.examples.SparkPi \
+--conf spark.executor.instances=1 \
+--conf spark_conf_dir=/opt/spark/conf \
+--conf spark.local.dir=/tmp/spark \
+--conf spark.kubernetes.container.image=anisha123/sparkzz \
+/opt/spark/examples/jars/spark-examples_2.11-2.4.0.jar
