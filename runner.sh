@@ -14,18 +14,20 @@ bin/spark-submit  \
     --conf spark.kubernetes.container.image=bde2020/spark-master \
     --class org.apache.spark.examples.SparkPi  \
     --name spark-pi  \
-    local:///usr/local/spark/examples/jars/spark-examples_2.11-2.4.0.jar 
+    local:///usr/local/spark/examples/jars/spark-examples_2.11-2.4.0.jar
 
 
 
+#########################running_instance
 
 
-bin/spark-submit \
---master k8s://https://localhost:6443 \
---deploy-mode cluster \
---class org.apache.spark.examples.SparkPi \
---conf spark.executor.instances=1 \
---conf spark_conf_dir=/opt/spark/conf \
---conf spark.local.dir=/tmp/spark \
---conf spark.kubernetes.container.image=anisha123/sparkzz \
-/opt/spark/examples/jars/spark-examples_2.11-2.4.0.jar
+    bin/spark-submit \
+    --master k8s://https://DEB5B33A43953E4771B3BDF07D501933.yl4.ap-south-1.eks.amazonaws.com \
+    --deploy-mode cluster \
+    --conf spark.kubernetes.authenticate.driver.serviceAccountName=driver \
+    --class org.apache.spark.examples.SparkPi \
+    --conf spark.executor.instances=1 \
+    --conf spark_conf_dir=/opt/spark/conf \
+    --conf spark.local.dir=/tmp/spark \
+    --conf spark.kubernetes.container.image=anisha123/sparkzz \
+    /opt/spark/examples/jars/spark-examples_2.11-2.4.0.jar
