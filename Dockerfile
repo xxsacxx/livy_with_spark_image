@@ -4,7 +4,7 @@ ENV SPARK_HOME=/opt/spark
 ENV LIVY_HOME=/opt/livy
 ENV HADOOP_CONF_DIR=/etc/hadoop/conf
 ENV SPARK_USER=ticksmith
-ENV SPARK_KUBERNETES_IMAGE=sunnybingome/spark8s:pyspark240py368
+ENV SPARK_KUBERNETES_IMAGE=showrya619/test:latest
 ENV k8s_url=https://DEB5B33A43953E4771B3BDF07D501933.yl4.ap-south-1.eks.amazonaws.com
 
 ARG AWS_JAVA_SDK_VERSION=1.7.4

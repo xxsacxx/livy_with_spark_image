@@ -30,7 +30,7 @@ spec:
         component: livy
     spec:
       containers:
-      - image: showrya619/spark_livy_finale:latest
+      - image: showrya619/livy-starrr:latest
         name: livy
         ports:
         - containerPort: 8998
