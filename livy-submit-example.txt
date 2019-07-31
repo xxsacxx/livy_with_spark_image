@@ -1,0 +1,6 @@
+curl -H "Content-Type: application/json" livy:8998/batches -X POST -d \
+ '{
+  "name" : "adrrrdrrrrriver",
+  "file" : "http://192.168.37.149:7006/app.py",
+  "pyFiles" : ["http://192.168.37.149:7006/dependencies.zip"]
+}'
